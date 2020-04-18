@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/svg.css">
+</head>
+
+<body>
+
+<div class="container" id="main">
+
+    <nav class="sidebar">
+        <h4 class="site_name"><a href="../index.html">HTML & CSS Handbook</a></h4>
+        <ul>
+            <li id="index_link"><a href="../index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;HOME</a></li>
+            <li id="text_link"><a href="text.html"><i class="fa fa-edit"></i>&nbsp;&nbsp;Text</a></li>
+            <li id="tables_link"><a href="tables.html"><i class="fa fa-tasks"></i>&nbsp;&nbsp;Tables</a></li>
+            <li id="forms_link"><a href="forms.html"><i class="fa fa-code"></i>&nbsp;&nbsp;Forms</a></li>
+            <li id="images_link"><a href="images.html"><i class="fa fa-camera"></i>&nbsp;&nbsp;Images</a></li>
+            <li id="media_link"><a href="media.html"><i class="fa fa-film"></i>&nbsp;&nbsp;Media</a></li>
+            <li id="svg_link"><a href="svg.html"><i class="fa fa-paint-brush"></i>&nbsp;&nbsp;SVG</a></li>
+            <li id="animation_link"><a href="animation.html"><i class="fa fa-magic"></i>&nbsp;&nbsp;Animations</a></li>
+            <li id="contact_link"><a href="contact.html"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact</a></li>
+        </ul>
+        <footer><p>&copy; Copyright 2020 Vitalii Papka</p></footer>
+    </nav>
+
+    <section class="main">
+        <div class="content">
+
+          <h1>SVG </h1>
+          <p>Scalable Vector Graphics (SVG) is an XML-based markup language for describing two-dimensional based vector graphics. As such, it's a text-based, open Web standard for describing images that can be rendered cleanly at any size and is designed specifically to work well with other web standards including CSS, DOM, JavaScript, and SMIL. SVG is, essentially, to graphics what HTML is to text.</p>
+          <br><br>
+          <h1>Examples</h1>
+          <br>
+          <h2>Circle</h2>
+          <svg height="160" width="160">
+              <circle cx="80" cy="80" r="70" stroke="black" stroke-width="2" fill="yellow" />
+              Sorry, your browser does not support inline SVG.
+          </svg>
+          <br><br>
+          <div class="code" id="circle">
+              <p>Code</p>
+              <div>
+                  <span class="brackets">&lt;</span><span class="tag">svg</span>&nbsp;height="160" width="160"<span class="brackets">&gt;</span><br>
+                  <span class="brackets">&lt;</span><span class="tag">circle</span>&nbsp;cx="80" cy="80" r="70" stroke="black" stroke-width="2" fill="yellow"&nbsp;<span class="brackets">&gt;</span><br>
+                  <span class="brackets">&lt;<span class="tag">/svg</span>&gt;</span><br>
+              </div>
+          </div>
+          <br><br>
+      
+          <h2>Rectangle</h2>
+          <svg width="400" height="180">
+          <rect x="10" y="10" width="150" height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+          Sorry, your browser does not support inline SVG.
+          </svg>
+          <br><br>
+          <div class="code" id="circle">
+              <p>Code</p>
+              <div>
+                  <span class="brackets">&lt;</span><span class="tag">svg</span>&nbsp;width="400" height="180"<span class="brackets">&gt;</span><br>
+                  <span class="brackets">&lt;</span><span class="tag">rect</span>&nbsp;x="10" y="10" width="150" height="150"<br>style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9"&nbsp;<span class="brackets">&gt;</span><br>
+                  <span class="brackets">&lt;<span class="tag">/svg</span>&gt;</span><br>
+              </div>
+          </div>
+          <br><br><br><br><br>
+      
+          <h1>Advanced Examples</h1><br>
+      
+          <h2>Quadratic Bézier curve</h2>
+          <svg height="400" width="450">
+              <path id="lineAB" d="M 100 350 l 150 -300" stroke="red" stroke-width="3" fill="none" />
+              <path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="3" fill="none" />
+              <path d="M 175 200 l 150 0" stroke="green" stroke-width="3" fill="none" />
+              <path d="M 100 350 q 150 -300 300 0" stroke="blue" stroke-width="5" fill="none" />
+
+            <g stroke="black" stroke-width="3" fill="black">
+              <circle id="pointA" cx="100" cy="350" r="3" />
+              <circle id="pointB" cx="250" cy="50" r="3" />
+              <circle id="pointC" cx="400" cy="350" r="3" />
+            </g>
+
+            <g font-size="30" font-family="sans-serif" fill="black" stroke="none" text-anchor="middle">
+              <text x="100" y="350" dx="-30">A</text>
+              <text x="250" y="50" dy="-10">B</text>
+              <text x="400" y="350" dx="30">C</text>
+            </g>
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <br><br>
+      
+          <h2>Rotation</h2>
+          <br><br>
+          <svg height="90" width="200">
+            <text x="0" y="30" fill="red" font-size="30px" font-style="oblique" transform="rotate(30 20,40)">I love UCU</text>
+            Sorry, your browser does not support inline SVG.
+          </svg>
+          <br><br><br><br>
+      
+          <h2>Filters</h2><br>
+          <svg height="280" width="280">
+            <defs>
+              <filter id="f1" x="0" y="0" width="200%" height="200%">
+                <feOffset result="offOut" in="SourceAlpha" dx="40" dy="40" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+              </filter>
+            </defs>
+            <rect width="180" height="180" fill="yellow" filter="url(#f1)" />
+            Sorry, your browser does not support inline SVG.
+          </svg>
+      
+
+        </div>
+    </section>
+
+</div>
+
+    <a id="to_top" class="fa fa-caret-square-o-up" href="#main"></a>
+
+</body>
+</html>
+
+
+    
+
